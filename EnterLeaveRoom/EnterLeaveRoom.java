@@ -1,3 +1,4 @@
+package EnterLeaveRoom;
 public class EnterLeaveRoom {
 
     public void calculateEnterLeaveRoom(String reqString) {
