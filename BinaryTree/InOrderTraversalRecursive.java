@@ -1,13 +1,13 @@
 package BinaryTree;
 
-public class PostOrderTraversal {
-    public static void postOrderTraversal(Node root) {
+public class InOrderTraversalRecursive {
+    public static void inOrderTraversal(Node root) {
         if(root == null)
             return;
         
-        postOrderTraversal(root.left);   
-        postOrderTraversal(root.right);
+        inOrderTraversal(root.left);   
         System.out.println(root.data);
+        inOrderTraversal(root.right);
     }
 
     public static void main(String[] args) {
@@ -22,9 +22,8 @@ public class PostOrderTraversal {
         System.out.println("ORIGINAL TREE:");
         System.out.println(root);
 
-        System.out.println("POSTORDER TRAVERSAL:");
-        postOrderTraversal(root);
+        System.out.println("INORDER TRAVERSAL:");
+        inOrderTraversal(root);
 
     }
-
 }

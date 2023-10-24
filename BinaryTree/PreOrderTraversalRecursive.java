@@ -1,6 +1,6 @@
 package BinaryTree;
 
-public class PreOrderTraversal {
+public class PreOrderTraversalRecursive {
     
     public static void preOrderTraversal(Node root) {
         if(root == null)
