@@ -4,8 +4,8 @@ The function should return a boolean indicating whether or not the 'target' can 
 
 You may reuse elements of `wordBank` as many times as needed.
 
-    m: target sum
-    n: numbers array length
+    m: target string length
+    n: strings array length
 
 1. Recursive Approach:
     -   Time Complexity: O(n ^ m * m) 
