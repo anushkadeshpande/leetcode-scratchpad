@@ -14,3 +14,7 @@ If there is a tie for the shortest combination, you may return any one of the sh
 2. Memoized Approach:
     -   Time Complexity: O(n * m ^ 2)
     -   Space Complexity: O(m ^ 2)
+
+3. Tabulated Approach:
+    -   Time Complexity: O(n * m ^ 2)
+    -   Space Complexity: O(m ^ 2)
