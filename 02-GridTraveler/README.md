@@ -8,3 +8,7 @@ In how many ways can you travel to the goal on a grid with dimensions m * n?
 2. Memoized Approach:
     -   Time Complexity: O(m * n)
     -   Space Complexity: O(m + n)
+
+3. Tabulated Approach:
+    -   Time Complexity: O(m * n)
+    -   Space Complexity: O(m * n)
