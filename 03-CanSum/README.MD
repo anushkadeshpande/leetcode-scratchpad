@@ -14,3 +14,7 @@ You may assume that all input numbers are nonnegative.
 2. Memoized Approach:
     -   Time Complexity: O(m * n)
     -   Space Complexity: O(m)
+
+3. Tabulated Approach:
+    -   Time Complexity: O(m * n)
+    -   Space Complexity: O(m)
