@@ -14,3 +14,7 @@ If there are multiple combinations possible, you may return any single one.
 2. Memoized Approach:
     -   Time Complexity: O(n * m ^ 2)
     -   Space Complexity: O(m ^ 2)
+
+3. Tabulated Approach:
+    -   Time Complexity: O(n * m ^ 2)
+    -   Space Complexity: O(m ^ 2)
