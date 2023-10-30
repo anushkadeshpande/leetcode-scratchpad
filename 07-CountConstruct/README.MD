@@ -14,3 +14,7 @@ You may reuse elements of `wordBank` as many times as needed.
 2. Memoized Approach:
     -   Time Complexity: O(n * m ^ 2)
     -   Space Complexity: O(m ^ 2)
+
+3. Tabulated Approach:
+    -   Time Complexity: O(n * m ^ 2)
+    -   Space Complexity: O(m)
