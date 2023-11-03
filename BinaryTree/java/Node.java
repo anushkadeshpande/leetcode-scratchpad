@@ -1,4 +1,4 @@
-package BinaryTree.java;
+package binaryTree.java;
 
 class Node {
     int data;

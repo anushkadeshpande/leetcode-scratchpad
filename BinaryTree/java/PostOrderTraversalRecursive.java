@@ -1,4 +1,4 @@
-package BinaryTree.java;
+package binaryTree.java;
 
 public class PostOrderTraversalRecursive {
     public static void postOrderTraversal(Node root) {
