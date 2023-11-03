@@ -1,12 +1,13 @@
-package BinaryTree;
+package BinaryTree.java;
 
-public class HeightOfBinaryTree {
-    public static int getHeight(Node root) {
+public class InOrderTraversalRecursive {
+    public static void inOrderTraversal(Node root) {
         if(root == null)
-            return 0;
+            return;
         
-        return 1 + Math.max(getHeight(root.left), getHeight(root.right));
-
+        inOrderTraversal(root.left);   
+        System.out.println(root.data);
+        inOrderTraversal(root.right);
     }
 
     public static void main(String[] args) {
@@ -21,7 +22,8 @@ public class HeightOfBinaryTree {
         System.out.println("ORIGINAL TREE:");
         System.out.println(root);
 
-        System.out.println("HEIGHT OF BINARY TREE:");
-        System.out.println(getHeight(root));
+        System.out.println("INORDER TRAVERSAL:");
+        inOrderTraversal(root);
+
     }
 }

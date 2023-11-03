@@ -1,4 +1,4 @@
-package BinaryTree;
+package BinaryTree.java;
 
 /*
  * For every node, height(left_subtree) - height(right_subtree) <= 1
