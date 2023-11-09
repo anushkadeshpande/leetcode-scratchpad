@@ -5,7 +5,6 @@ var countHomogenous = function(s) {
     let buffer = ''
     let currentChar = ''
     for(let i = 0; i < s.length; i++) {
-        // store the current character
         if(currentChar == '') {
             currentChar = s[i]
             buffer += currentChar
@@ -16,7 +15,6 @@ var countHomogenous = function(s) {
                 buffer += currentChar
             }
             else {
-                
                 buffer = s[i]
                 currentChar = s[i]
             }
