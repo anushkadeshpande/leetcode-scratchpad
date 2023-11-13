@@ -3,10 +3,6 @@
  * @return {number}
  */
 
-let isNumber = (c) => {
-    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].includes(+c)
-}
-
 var myAtoi = function(s) {
     let sign = ''
     let num = ''
