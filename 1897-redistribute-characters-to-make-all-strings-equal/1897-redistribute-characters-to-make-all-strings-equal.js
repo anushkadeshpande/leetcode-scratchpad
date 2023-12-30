@@ -26,7 +26,6 @@ var makeEqual = function(words) {
         }
         
         for(let char in charMap) {
-            console.log(charMap[char] % words.length)
             if(charMap[char] % words.length !== 0)
                 return false
         }
