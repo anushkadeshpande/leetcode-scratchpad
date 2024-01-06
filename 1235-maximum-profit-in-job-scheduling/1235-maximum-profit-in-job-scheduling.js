@@ -26,7 +26,7 @@ var jobScheduling = function(startTime, endTime, profit) {
     
     
     // create array of obj with startTime, endTime and profit
-    // sort according to endTime
+    // sort according to startTime
     
     let jobs = buildJobsArray(startTime, endTime, profit)
     
