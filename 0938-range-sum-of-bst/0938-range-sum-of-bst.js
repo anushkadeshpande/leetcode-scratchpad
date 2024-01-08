@@ -18,13 +18,12 @@ var rangeSumBST = function(root, low, high) {
     let sum = 0
 
     let traverseAndGetSum = (root) => {
-    if(!root)
-        return
-    if(root.val >= low && root.val <= high)
-        sum += root.val
-    traverseAndGetSum(root.left)
-    traverseAndGetSum(root.right)
-
+        if(!root)
+            return
+        if(root.val >= low && root.val <= high)
+            sum += root.val
+        traverseAndGetSum(root.left)
+        traverseAndGetSum(root.right)
     }
 
     traverseAndGetSum(root)    
