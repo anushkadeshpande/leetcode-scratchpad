@@ -1,25 +1,29 @@
 class Solution {
-    public boolean isPalindrome(String s) {
-        
-        // clean the string
-        // remove non alphanumeric characters
-        
-        s = s.replaceAll("[^a-zA-Z0-9]", "");
-        
-        // convert all to lowercase
-        s = s.toLowerCase();
-                
+    public boolean isPalindrome(String s) {                
         int startPointer = 0;
         int endPointer = s.length() -1;
         
         while(startPointer < endPointer) {
-            if(s.charAt(startPointer) != s.charAt(endPointer)) 
+            
+            if(!isAlphaNumeric(s.charAt(startPointer))) 
+                startPointer ++;
+            else if(!isAlphaNumeric(s.charAt(endPointer)))
+                endPointer--;
+            else if(Character.toLowerCase(s.charAt(startPointer)) != Character.toLowerCase(s.charAt(endPointer)))
                 return false;
             
-            startPointer ++;
-            endPointer --;
+            else {
+                startPointer ++;
+                endPointer --;
+            }
         }
         
         return true;
     }
-}
+    
+    private static boolean isAlphaNumeric(char c) {
+        return (c >= 'a' && c <= 'z') ||
+               (c >= 'A' && c <= 'Z') ||
+               (c >= '0' && c <= '9');
+    }
+} 
