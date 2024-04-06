@@ -8,8 +8,6 @@ var maxBottlesDrunk = function(numBottles, numExchange) {
     let bottlesDrunk = 0
     
     while(numBottles > 0 || emptyBottles >= numExchange) {
-        // check if emptyBottles === numExchange
-        // if true, exchange!
         if(emptyBottles > 0 && emptyBottles >= numExchange) {
             // exchange
             numBottles += 1
