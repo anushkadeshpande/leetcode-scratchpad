@@ -34,7 +34,8 @@ var minRemoveToMakeValid = function(s) {
     }
     
     // remove any extra - in the string
-    validString = validString.replace(new RegExp('-', 'g'),"")
+    if(validString.indexOf('-') !== -1)
+        validString = validString.replace(new RegExp('-', 'g'),"")
     
     return validString
 };
