@@ -7,6 +7,8 @@ var minRemoveToMakeValid = function(s) {
     
     let validString = ""
     
+    // to keep a track of any extra closing braces that could exist in the string
+    // we'll be ignoring them, so, to get the index right while preparing the final string, we'll add this number to index
     let trailingClosingBraces = 0
     
     for(let i=0; i<s.length; i++) {
