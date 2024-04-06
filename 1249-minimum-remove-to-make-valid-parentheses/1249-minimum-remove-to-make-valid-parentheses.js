@@ -4,7 +4,6 @@
  */
 var minRemoveToMakeValid = function(s) {
     let stack = [] // to track correctness of paranthesis
-    let count = 0
     
     let validString = ""
     
