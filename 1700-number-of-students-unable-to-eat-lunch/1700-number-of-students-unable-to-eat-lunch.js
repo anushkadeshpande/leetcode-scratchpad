@@ -11,6 +11,7 @@ Array.prototype.pop = function() {
 var countStudents = function(students, sandwiches) {
   let unableToEat = 0
 
+  // if we still have sandwiches left and not everyone is unable to eat yet
   while(sandwiches.length !==0 && unableToEat < students.length) {
             
       // student gets the sandwich they want
