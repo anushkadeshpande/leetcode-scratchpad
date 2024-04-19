@@ -1,14 +1,9 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        Map<Integer, Integer> occurrenceMap = new HashMap<>();
+        Set<Integer> numsSet = new HashSet(Arrays.stream(nums).boxed().toList());
         
-        for(Integer n: nums) {
-            if(occurrenceMap.containsKey(n)) {
-                return true;
-            } else 
-                occurrenceMap.put(n ,1);
-        }
-        
-        return false;
+        if(numsSet.size() == nums.length)
+            return false;
+        return true;
     }
 }
