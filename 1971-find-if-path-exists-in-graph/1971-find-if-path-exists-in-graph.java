@@ -2,6 +2,9 @@ class Solution {
     public boolean validPath(int n, int[][] edges, int source, int destination) {
         boolean[] visited = new boolean[n];
         
+        if(n==1 || edges.length == 0 || source == destination)
+            return true;
+        
         // construct graph as adjacency list
         Map<Integer, List<Integer>> graph = new HashMap<>();
         for (int[] edge : edges) {
