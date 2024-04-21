@@ -13,21 +13,24 @@ class Solution {
         
         // perform dfs
         
-        dfs(graph, visited, 0);
+        dfs(graph, visited, 0, destination);
         if(visited[source] && visited[destination])
             return true;
         return false;
     }
     
-    public void dfs(Map<Integer, List<Integer>> graph, boolean[] visited, int node) {
+    public void dfs(Map<Integer, List<Integer>> graph, boolean[] visited, int node, int destination) {
         if(visited[node])
             return;
         
         visited[node] = true;
         
+        if(node == destination)
+            return;
+        
         if(graph.get(node) != null)
             for(Integer n: graph.get(node)) {
-                dfs(graph, visited, n);
+                dfs(graph, visited, n, destination);
             }
     }
 }
