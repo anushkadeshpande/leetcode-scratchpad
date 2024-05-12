@@ -1,22 +1,40 @@
 class StockSpanner {
-    Stack<Integer> stack;
-    List<Integer> arr;
+    class Span {
+        int price;
+        int idx;
+        
+        public Span(int price, int idx) {
+            this.price = price;
+            this.idx = idx;
+        }
+        
+        public int getPrice() {
+            return this.price;
+        }
+        
+        public int getIdx() {
+            return this.idx;
+        }
+    }
+    
+    Stack<Span> stack;
+    int size;
     
     public StockSpanner() {
         stack = new Stack();
-        arr = new ArrayList<>();
+        size = 0;
     }
     
     public int next(int price) {
         int ans = 1;
-        arr.add(price);
+        size ++;
         
-        while(!stack.empty() && arr.get(stack.peek()) <= price)
+        while(!stack.empty() && stack.peek().getPrice() <= price)
             stack.pop();
 
-        ans = arr.size() - (!stack.empty() ? stack.peek() + 1 : 0); 
+        ans = size - (!stack.empty() ? stack.peek().getIdx() + 1 : 0); 
         
-        stack.push(arr.size() - 1); 
+        stack.push(new Span(price, size-1)); 
         
         return ans;
     }
