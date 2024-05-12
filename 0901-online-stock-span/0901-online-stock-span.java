@@ -1,9 +1,10 @@
 class StockSpanner {
-    Stack<Integer> stack = new Stack();
-    List<Integer> arr = new ArrayList<>();
+    Stack<Integer> stack;
+    List<Integer> arr;
     
     public StockSpanner() {
-        
+        stack = new Stack();
+        arr = new ArrayList<>();
     }
     
     public int next(int price) {
@@ -13,7 +14,7 @@ class StockSpanner {
         while(!stack.empty() && arr.get(stack.peek()) <= price)
             stack.pop();
 
-        ans = arr.size() - (stack.size() > 0 ? stack.peek() + 1 : 0); 
+        ans = arr.size() - (!stack.empty() ? stack.peek() + 1 : 0); 
         
         stack.push(arr.size() - 1); 
         
