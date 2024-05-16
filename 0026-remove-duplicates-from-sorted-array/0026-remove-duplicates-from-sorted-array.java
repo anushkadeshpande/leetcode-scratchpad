@@ -1,19 +1,12 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        List<Integer> occurrence = new ArrayList<>();
+        int idx = 1;
         
-        for(int i=0; i< nums.length; i++) {
-            if(occurrence.contains(nums[i])) {
-                nums[i] = Integer.MAX_VALUE;
-            } else {
-                occurrence.add(nums[i]);
-            }
+        for(int i=1; i<nums.length; i++) {
+            if(nums[i] != nums[i-1]) 
+                nums[idx++] = nums[i];
         }
         
-        System.out.println(occurrence);
-        
-        Arrays.sort(nums);
-        
-        return occurrence.size();
+        return idx;
     }
 }
