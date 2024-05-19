@@ -1,31 +1,32 @@
 class MinStack {
-    Stack<Integer> helper;
-    Stack<Integer> stack;
+    Stack<List<Integer>> stack;
     
     public MinStack() {
-        helper = new Stack<>();
         stack = new Stack();
     }
     
     public void push(int val) {
-        stack.push(val);
-        if(helper.empty() || val <= helper.peek()) {
-            helper.push(val);
+        List<Integer> ele = new ArrayList();
+        ele.add(val);
+        if(stack.empty() || stack.peek().get(1) >= val) {
+            ele.add(val);
+        } else{
+            ele.add(stack.peek().get(1));
         }
+        stack.push(ele);
+        
     }
     
     public void pop() {
-        int val = stack.pop();
-        if(val == helper.peek())
-            helper.pop();
+       stack.pop();
     }
     
     public int top() {
-        return stack.peek();
+        return stack.peek().get(0);
     }
     
     public int getMin() {
-        return helper.peek();
+        return stack.peek().get(1);
     }
 }
 
