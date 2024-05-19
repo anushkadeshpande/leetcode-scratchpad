@@ -6,7 +6,7 @@ class MinStack {
     }
     
     public void push(int val) {
-        List<Integer> ele = new ArrayList();
+        List<Integer> ele = new ArrayList<>();
         ele.add(val);
         if(stack.empty() || stack.peek().get(1) >= val)
             ele.add(val);
