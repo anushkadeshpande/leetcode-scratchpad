@@ -1,22 +1,21 @@
 class Solution {
     public int majorityElement(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>();
         
+        // using moore's voting algo
+        int count = 0;
+        int maxEle = -1;
         for(int n: nums) {
-            if(map.containsKey(n))
-                map.put(n, map.get(n) + 1);
-            else
-                map.put(n, 1);
+            if(count == 0) {
+                maxEle = n;
+                count ++;
+            } else if(n == maxEle) {
+                count++;
+            } else
+                count --;
         }
         
-        int maxKey = -1;
-        for(int key : map.keySet()) {
-            if(maxKey == -1)
-                maxKey = key;
-            else
-                maxKey = map.get(maxKey) > map.get(key)? maxKey : key;
-        }
-                         
-        return maxKey;
+        // verify if maxEle is actually the majority element --- is this required??
+        
+        return maxEle;
     }
 }
