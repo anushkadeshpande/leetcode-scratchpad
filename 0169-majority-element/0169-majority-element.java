@@ -7,8 +7,9 @@ class Solution {
         for(int n: nums) {
             if(count == 0) {
                 maxEle = n;
-                count ++;
-            } else if(n == maxEle) {
+            } 
+            
+            if(n == maxEle) {
                 count++;
             } else
                 count --;
