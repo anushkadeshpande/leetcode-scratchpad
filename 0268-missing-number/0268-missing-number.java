@@ -1,16 +1,16 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        Arrays.sort(nums);
+        int targetSum = 0;
+        int sum = 0;
+        // find sum of numbers from 1 - nums.length
+        for(int i=1; i<=nums.length; i++)
+            targetSum += i;
         
-        if(nums[0] != 0)
-            return 0;
+        // find sum of array
+        for(int i=0; i<nums.length; i++)
+            sum += nums[i];
         
-        for(int i=1; i<nums.length; i++) {
-            if(nums[i] - nums[i-1] > 1) {
-                return nums[i] - 1;
-            }
-        }
-        
-        return nums[nums.length - 1] + 1;
+        // diff is the missing number
+        return targetSum - sum;
     }
 }
