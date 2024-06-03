@@ -6,13 +6,13 @@ class Solution {
         for(int n: nums) {
             if(n == 1) {
                 ones++;
-                maxOnes = Math.max(maxOnes, ones);
             } else {
+                maxOnes = Math.max(maxOnes, ones);
                 ones = 0;
             }
             
         }
-        
+        maxOnes = Math.max(maxOnes, ones);
         return maxOnes;
     }
 }
