@@ -1,5 +1,4 @@
 class Solution {
-    // Map<String, Integer> memo = new HashMap<>();
     
     public int getNumberOfRolls(int n, int k, int target, int[][] memo){
         int ans = 0;
@@ -23,7 +22,6 @@ class Solution {
             ans = (ans + getNumberOfRolls(n-1, k, target-(i+1), memo)) % 1000000007; 
         }
         
-        // memo.put(key, ans);
         memo[n][target] = ans;
         return ans;
     }
@@ -36,9 +34,7 @@ class Solution {
             Arrays.fill(memo[i], -1);
         }
         
-        return getNumberOfRolls(n, k, target, memo);
-        
-        // return 0;
+        return getNumberOfRolls(n, k, target, memo);        
     }
     
     
