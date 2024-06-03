@@ -1,12 +1,14 @@
 class Solution {
     public int appendCharacters(String s, String t) {
         int idx = 0;
+        int sLength = s.length();
+        int tLength = t.length();
         
-        for(int i=0; i<s.length() && idx < t.length(); i++) {
+        for(int i=0; i<sLength && idx < tLength; i++) {
             if(s.charAt(i) == t.charAt(idx))
                 idx++;
         }
         
-        return t.length() - idx;
+        return tLength - idx;
     }
 }
