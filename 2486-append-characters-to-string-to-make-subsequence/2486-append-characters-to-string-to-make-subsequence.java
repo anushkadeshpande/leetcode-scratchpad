@@ -3,11 +3,13 @@ class Solution {
         int idx = 0;
         
         for(int i=0; i<s.length(); i++) {
+            if(idx == t.length())
+                break;
+            
             if(idx < t.length() && s.charAt(i) == t.charAt(idx))
                 idx++;
         }
-        int remainingChars = t.length() - idx;
         
-        return remainingChars;
+        return t.length() - idx;
     }
 }
