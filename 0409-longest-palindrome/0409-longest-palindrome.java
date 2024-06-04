@@ -14,12 +14,15 @@ class Solution {
                 else 
                     map.put(c, 1);
             }
+            
             int length = 0;
             for(Character c: map.keySet()) {
+                int n = map.get(c);
+                
                 if(map.get(c) % 2 == 0)
-                    length += map.get(c);
+                    length += n;
                 else {
-                    length += map.get(c) - 1;
+                    length += n - 1;
                     oddFlag = true;
                 }
             }
