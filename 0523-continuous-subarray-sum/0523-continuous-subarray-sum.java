@@ -15,12 +15,10 @@ class Solution {
             sum += nums[i];
             int rem = sum % k;
             
-            if(map.containsKey(rem)) {
-                if(i - map.get(rem) > 1)
-                    return true;
-            } else {
+            if(!map.containsKey(rem))
                 map.put(rem, i);
-            }
+            else if(i - map.get(rem) > 1)
+                return true;
         }
         
         return false;
