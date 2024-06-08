@@ -15,9 +15,11 @@ class Solution {
             sum += nums[i];
             int rem = sum % k;
             
-            if(!map.containsKey(rem))
+            Integer idx = map.get(rem);
+            
+            if(null == idx)
                 map.put(rem, i);
-            else if(i - map.get(rem) > 1)
+            else if(i - idx > 1)
                 return true;
         }
         
