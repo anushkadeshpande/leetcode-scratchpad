@@ -1,26 +1,29 @@
 class Solution {
     public boolean checkSubarraySum(int[] nums, int k) {
-        
-        // using prefix sum method
-        
-        // map of remainders and indexes
-        Map<Integer, Integer> map = new HashMap<>();
-        
-        // if the 1st element matches
-        map.put(0, -1);
-        
-        int sum = 0;
-        
-        for(int i=0; i<nums.length; i++) {
-            sum += nums[i];
-            int rem = sum % k;
-            
-            if(!map.containsKey(rem))
-                map.put(rem, i);
-            else if(i - map.get(rem) > 1)
-                return true;
+        HashMap<Integer, Integer> reminders = new HashMap<>();
+
+        reminders.put(0, -1);
+
+        int prefixSum = 0;
+
+        for(int i = 0; i < nums.length; i++)
+        {
+            prefixSum += nums[i];
+            int key = prefixSum % k;
+
+            if(reminders.containsKey(key))
+            {
+                if(i - reminders.get(key) > 1)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                reminders.put(key, i);
+            }
         }
-        
+
         return false;
     }
 }
