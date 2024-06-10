@@ -2,7 +2,7 @@ class Solution {
     public int heightChecker(int[] heights) {
         
         // sort heights
-        int[] expected = Arrays.copyOf(heights,heights.length);
+        int[] expected = heights.clone();
         Arrays.sort(expected);
         
         int count = 0;
