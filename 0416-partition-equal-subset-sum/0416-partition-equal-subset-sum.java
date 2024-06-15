@@ -1,15 +1,19 @@
 class Solution {
     int dp[][];
     public boolean canPartitionArray(int[] arr, int n, int target) {
-        for(int i=1; i<=n; i++) {
-            for(int j=0; j<=target; j++) {
-                if(j >= arr[i-1])
-                    dp[i][j] = (dp[i-1][j-arr[i-1]] == 1 || dp[i-1][j] == 1)? 1 : 0;
-                else
-                    dp[i][j] = dp[i-1][j];
-
-            }
-        }
+        if(target == 0)
+            return true;
+        
+        if(n <= 0)
+            return false;
+        
+        if(dp[n][target] != -1)
+            return dp[n-1][target] == 1;
+        
+        if(target >= arr[n-1])
+            dp[n][target] = (canPartitionArray(arr, n-1, target-arr[n-1]) || canPartitionArray(arr, n-1, target))? 1 : 0;
+        else
+            dp[n][target] = canPartitionArray(arr, n-1, target) ? 1 : 0;
         
         return dp[n][target] == 1;
     }
@@ -25,12 +29,7 @@ class Solution {
         
         for(int i=0; i<=nums.length; i++)
             for(int j=0; j<=sum/2; j++)
-                if(j == 0)
-                    dp[i][j] = 1;
-                else if(i == 0)
-                    dp[i][j] = 0;
-                else
-                    dp[i][j] = -1;
+                dp[i][j] = -1;
         
         return canPartitionArray(nums, nums.length, sum/2);
     }
