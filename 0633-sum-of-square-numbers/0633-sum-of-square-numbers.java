@@ -6,6 +6,8 @@ class Solution {
         int a = (int)Math.floor(Math.sqrt(c));
         
         // for every a from a to 0, check if we can get a b
+        if(a*a == c)
+            return true;
         for(int i=a; i>= 0; i--) {
             int bSquare = c - ( i * i );
         
