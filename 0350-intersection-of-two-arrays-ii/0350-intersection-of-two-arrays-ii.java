@@ -10,10 +10,6 @@ class Solution {
         }
         
         
-//         Arrays.sort(nums1);
-//         Arrays.sort(nums2);
-        
-        
         List<Integer> intersection = new ArrayList<>();
         
         for(int i=0; i<nums2.length; i++) {
@@ -23,19 +19,6 @@ class Solution {
                 }
         }
         
-//         int i = 0;
-//         int j = 0;
-        
-//         while(i < nums1.length && j < nums2.length) {
-//             if(nums1[i] == nums2[j]) {
-//                 intersection.add(nums1[i]);
-//                 i++;
-//                 j++;
-//             } else if(nums1[i] > nums2[j]) {
-//                 j++;
-//             } else 
-//                 i++;
-//         }
         
         int[] answer = new int[intersection.size()];
         
