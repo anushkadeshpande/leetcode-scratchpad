@@ -1,7 +1,23 @@
 class Solution {
     
     int dp[][];
-  
+    
+    public int minDifference(int[] arr, int n, int target, int sum) {
+        if(n < 0)
+            return Math.abs(target - sum);
+        
+        if(dp[n][target] != -1)
+            return dp[n][target];
+        
+        int take = minDifference(arr, n-1, target-arr[n], sum + arr[n]);
+        
+        int notTake = minDifference(arr, n-1, target, sum);
+        
+        dp[n][target] = Math.min(take, notTake);
+        
+        return dp[n][target];
+    }
+    
     public int lastStoneWeightII(int[] stones) {
         // same as minimum subset sum difference
         
@@ -18,30 +34,10 @@ class Solution {
         
         for(int i=0; i<=n; i++) {
             for(int j=0; j<=sum; j++) {
-                
-                if(j == 0)
-                    dp[i][j] = 1;
-                else if(i == 0)
-                    dp[i][j] = 0;
-                else {
-                    if(j >= stones[i-1]) 
-                        dp[i][j] = ((dp[i-1][j - stones[i-1]] == 1) || dp[i-1][j] == 1) ? 1 : 0;
-                    else
-                        dp[i][j] = dp[i-1][j];
-                }
-                
+                dp[i][j] = -1; 
             }
         }
         
-        // subsetSum(stones, n, sum);
-        
-        int minDiff = Integer.MAX_VALUE;
-        for(int i=0; i<=sum/2; i++) {
-            if(dp[n][i] == 1) {
-                minDiff = Math.min(minDiff, sum - 2 * i);                
-            }
-        }
-        
-        return minDiff;
+        return minDifference(stones, n - 1, sum, 0);
     }
 }
