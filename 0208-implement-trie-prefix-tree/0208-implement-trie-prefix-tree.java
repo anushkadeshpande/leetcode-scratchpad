@@ -34,15 +34,16 @@ class Trie {
         Node temp = this.root;
         int i = 0;
         while (i < word.length()) {
+            char currentChar = word.charAt(i);
             // if the current char does not exist in trie, add it and create a new node at
             // that position
-            if (!temp.containsKey(word.charAt(i))) {
+            if (!temp.containsKey(currentChar)) {
                 // temp.links[word.charAt(i) - 'a'] = new Node();
-                temp.put(word.charAt(i));
+                temp.put(currentChar);
             }
 
             // move to the reference trie
-            temp = temp.get(word.charAt(i));
+            temp = temp.get(currentChar);
 
             i++;
         }
@@ -55,10 +56,11 @@ class Trie {
         int i = 0;
 
         while (i < word.length()) {
-            if (!temp.containsKey(word.charAt(i)))
+            char currentChar = word.charAt(i);
+            if (!temp.containsKey(currentChar))
                 return false;
 
-            temp = temp.get(word.charAt(i));
+            temp = temp.get(currentChar);
             i++;
         }
 
@@ -70,10 +72,11 @@ class Trie {
         int i = 0;
 
         while (i < prefix.length()) {
-            if (!temp.containsKey(prefix.charAt(i)))
+            char currentChar = prefix.charAt(i);
+            if (!temp.containsKey(currentChar))
                 return false;
 
-            temp = temp.get(prefix.charAt(i));
+            temp = temp.get(currentChar);
             i++;
         }
 
