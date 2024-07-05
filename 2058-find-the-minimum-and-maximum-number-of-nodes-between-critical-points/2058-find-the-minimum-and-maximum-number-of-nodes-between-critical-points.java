@@ -25,7 +25,6 @@ class Solution {
         if(next == null)
             return new int[]{-1,-1};
         
-        List<Integer> criticalPoints = new ArrayList<>();
         int idx = 1;
         
         int prevCriticalPoint = -1;
@@ -44,7 +43,6 @@ class Solution {
                     minDiff = minDiff != -1? Math.min(minDiff, idx - prevCriticalPoint) : idx - prevCriticalPoint;
                     prevCriticalPoint = idx;
                 }
-                criticalPoints.add(idx);
             }
             
             prev = prev.next;
@@ -55,17 +53,6 @@ class Solution {
         }
         if(prevCriticalPoint != firstCriticalPoint)
             maxDiff = prevCriticalPoint - firstCriticalPoint;
-        
-        
-//         if(criticalPoints.size() >= 2) {
-//             Collections.sort(criticalPoints);
-            
-//             for(int i=1; i<criticalPoints.size(); i++)
-//                 minDiff = minDiff != -1? Math.min(minDiff, criticalPoints.get(i) - criticalPoints.get(i-1)) : criticalPoints.get(i) - criticalPoints.get(i-1);
-        
-            
-//             maxDiff = criticalPoints.get(criticalPoints.size() - 1) - criticalPoints.get(0);
-//         }
         
         
         return new int[]{minDiff, maxDiff};
