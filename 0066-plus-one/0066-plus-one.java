@@ -3,6 +3,13 @@ class Solution {
         int carry = 1;
         // List<Integer> sol = new ArrayList<>();
         int size = digits.length; 
+        
+        if(digits[size - 1] <= 8) {
+            digits[size - 1] += 1;
+            
+            return digits;
+        }
+        
         for(int i= size- 1; i>=0; i--) {
             int sum = digits[i] + carry;
             if(sum == 10) {
