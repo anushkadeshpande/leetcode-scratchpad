@@ -7,7 +7,7 @@ class Solution {
         
         int n = prices.length;
         
-        int[] nge = new int[n];
+        // int[] nge = new int[n];
         
         int[] maxProfit = new int[n];
         
@@ -18,11 +18,12 @@ class Solution {
                 stack.pop();
             }
             
-            if(stack.empty())
-                nge[i] = -1;
-            else {
-                nge[i] = stack.peek();
-                 maxProfit[nge[i]] = Math.max(prices[nge[i]] - prices[i], maxProfit[nge[i]]);
+            // if(stack.empty())
+                // nge[i] = -1;
+            if(!stack.empty()) {
+                // nge[i] = stack.peek();
+                int idx = stack.peek();
+                 maxProfit[idx] = Math.max(prices[idx] - prices[i], maxProfit[idx]);
             }
             
             stack.push(i);
