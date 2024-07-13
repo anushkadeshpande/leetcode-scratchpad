@@ -1,8 +1,9 @@
 class Solution {
     public int[] plusOne(int[] digits) {
         int carry = 1;
-        List<Integer> sol = new ArrayList<>();
-        for(int i=digits.length - 1; i>=0; i--) {
+        // List<Integer> sol = new ArrayList<>();
+        int size = digits.length; 
+        for(int i= size- 1; i>=0; i--) {
             int sum = digits[i] + carry;
             if(sum == 10) {
                 carry = 1;
@@ -11,16 +12,18 @@ class Solution {
                 carry = 0;
             }
             
-            sol.add(sum);
+            digits[i] = sum;
+        }
+        
+        if(carry == 1)
+            size++;
+        
+        int[] res = new int[size];
+        for(int i=digits.length-1; i>=0; i--) {
+            res[i] = digits[i];
         }
         if(carry == 1)
-            sol.add(carry);
-        
-        int[] res = new int[sol.size()];
-        for(int i=res.length-1; i>=0; i--) {
-            res[i] = sol.get(res.length-1-i);
-        }
-        
+            res[0] = 1;
         return res;
     }
 }
