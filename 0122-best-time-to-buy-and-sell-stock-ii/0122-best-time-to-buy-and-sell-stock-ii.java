@@ -20,20 +20,20 @@ class Solution {
             
             if(stack.empty())
                 nge[i] = -1;
-            else
+            else {
                 nge[i] = stack.peek();
+                 maxProfit[nge[i]] = Math.max(prices[nge[i]] - prices[i], maxProfit[nge[i]]);
+            }
             
             stack.push(i);
         }
         
         int ans = 0;
-        int curr = 0;
-            
         
-        for(int i=0; i<n; i++) {
-            if(nge[i]!= -1)
-                maxProfit[nge[i]] = Math.max(prices[nge[i]] - prices[i], maxProfit[nge[i]]);
-        }
+        // for(int i=0; i<n; i++) {
+        //     if(nge[i]!= -1)
+        //         maxProfit[nge[i]] = Math.max(prices[nge[i]] - prices[i], maxProfit[nge[i]]);
+        // }
         
         for(int i=0; i<n; i++)
             ans += maxProfit[i];
