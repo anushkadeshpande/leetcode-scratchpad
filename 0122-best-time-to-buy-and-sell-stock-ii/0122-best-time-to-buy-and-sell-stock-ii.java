@@ -9,7 +9,11 @@ class Solution {
         
         int[] nge = new int[n];
         
+        int[] maxProfit = new int[n];
+        
         for(int i=n-1; i>=0; i--) {
+            maxProfit[i] = 0;
+            
             while(!stack.empty() && prices[stack.peek()] <= prices[i]) {
                 stack.pop();
             }
@@ -24,10 +28,7 @@ class Solution {
         
         int ans = 0;
         int curr = 0;
-        
-        int[] maxProfit = new int[n];
-        for(int i=0; i<n; i++)
-            maxProfit[i] = 0;
+            
         
         for(int i=0; i<n; i++) {
             if(nge[i]!= -1)
