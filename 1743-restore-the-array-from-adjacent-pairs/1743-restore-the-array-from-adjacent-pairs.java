@@ -1,11 +1,13 @@
 class Solution {
+    List<Integer> sol = new ArrayList<>();
+    Set<Integer> visited = new HashSet<>();
     
-    public void traverse(Map<Integer, List<Integer>> adjacencyList, int source, List<Integer> sol, Set<Integer> visited) {
+    public void traverse(Map<Integer, List<Integer>> adjacencyList, int source) {
         if(!visited.contains(source)) {
             sol.add(source);
             visited.add(source);
             for(int node: adjacencyList.get(source))
-                traverse(adjacencyList, node, sol, visited);
+                traverse(adjacencyList, node);
         }
     }
     
@@ -26,11 +28,11 @@ class Solution {
         }
         
         
-        List<Integer> sol = new ArrayList<>();
+        
         
         for(int source: adjacencyList.keySet()) {
             if(adjacencyList.get(source).size() == 1) {
-                traverse(adjacencyList, source, sol, new HashSet<Integer>());
+                traverse(adjacencyList, source);
                 
                 break;
             }
