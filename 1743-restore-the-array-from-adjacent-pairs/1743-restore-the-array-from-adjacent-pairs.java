@@ -1,19 +1,18 @@
 class Solution {
+    Map<Integer, List<Integer>> adjacencyList = new HashMap<>();
     List<Integer> sol = new ArrayList<>();
     Set<Integer> visited = new HashSet<>();
     
-    public void traverse(Map<Integer, List<Integer>> adjacencyList, int source) {
+    public void traverse(int source) {
         if(!visited.contains(source)) {
             sol.add(source);
             visited.add(source);
             for(int node: adjacencyList.get(source))
-                traverse(adjacencyList, node);
+                traverse(node);
         }
     }
     
     public int[] restoreArray(int[][] adjacentPairs) {
-        Map<Integer, List<Integer>> adjacencyList = new HashMap<>();
-        
         for(int i=0; i<adjacentPairs.length; i++) {
             if(!adjacencyList.containsKey(adjacentPairs[i][0])) {
                 adjacencyList.put(adjacentPairs[i][0], new ArrayList<>());
@@ -32,7 +31,7 @@ class Solution {
         
         for(int source: adjacencyList.keySet()) {
             if(adjacencyList.get(source).size() == 1) {
-                traverse(adjacencyList, source);
+                traverse(source);
                 
                 break;
             }
