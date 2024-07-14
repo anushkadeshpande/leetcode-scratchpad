@@ -22,8 +22,8 @@ class Solution {
     public int minCostClimbingStairs(int[] cost) {
         // at every step, we either climb it or skip it
         int n = cost.length;
-        dp = new int[n + 1];
-        for(int i=0; i<=n; i++) {
+        dp = new int[n];
+        for(int i=0; i<n; i++) {
             dp[i] = -1;
         }
         return Math.min(getMinCostClimb(cost, n, 0), getMinCostClimb(cost, n, 1));
