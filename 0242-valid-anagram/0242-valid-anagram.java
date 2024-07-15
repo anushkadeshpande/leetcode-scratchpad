@@ -7,14 +7,15 @@ class Solution {
             return false;
         
         int[] count = new int[26];
+        int i = 0;
         
-        for(int i=0; i<n; i++)
+        for(i=0; i<n; i++)
             count[s.charAt(i) - 'a']++;
         
-        for(int i=0; i<m; i++)
+        for(i=0; i<m; i++)
             count[t.charAt(i) - 'a']--;
         
-        for(int i=0; i<26; i++) {
+        for(i=0; i<26; i++) {
             if(count[i] > 0)
                 return false;
         }
