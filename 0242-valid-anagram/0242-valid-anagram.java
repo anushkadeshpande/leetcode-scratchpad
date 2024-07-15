@@ -12,11 +12,6 @@ class Solution {
         char[] s2 = t.toCharArray();
         Arrays.sort(s2);
         
-        for(int i=0; i<n; i++) {
-            if(s1[i] != s2[i])
-                return false;
-        }
-        
-        return true;
+        return Arrays.equals(s1, s2);
     }
 }
