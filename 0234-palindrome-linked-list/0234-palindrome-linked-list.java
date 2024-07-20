@@ -13,7 +13,7 @@ class Solution {
         // go to the middle of the linked list
         ListNode slow = head;
         ListNode fast = head;
-        ListNode prev = head;
+        ListNode prev = null;
         ListNode temp = null;
         
         while(fast != null && fast.next != null) {
