@@ -2,6 +2,7 @@ class Solution {
     static boolean[] isPrime = new boolean[5_000_001];
     
     public Solution() {
+        System.out.println("Counting ");
         for(int i = 2; i*i <= 5_000_000; i++){
             
             if(isPrime[i] == false){
