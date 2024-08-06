@@ -2,7 +2,7 @@ class neighborSum {
     int rows;
     int cols;
     
-    Map<Integer, String> positionMap = new HashMap<>();
+    Map<Integer, Integer> positionMap = new HashMap<>();
     int[][] grid;
         
     public neighborSum(int[][] grid) {
@@ -11,17 +11,16 @@ class neighborSum {
         this.grid = grid;
         for(int i=0; i<rows; i++) {
             for(int j=0; j<cols; j++) {
-                positionMap.put(grid[i][j], i + ":" + j);
+                positionMap.put(grid[i][j], (i * 100) + j);
             }
         }
     }
     
     public int adjacentSum(int value) {
-        String pos = positionMap.get(value);
-        String x[] = pos.split(":");
+        int pos = positionMap.get(value);
         
-        int r = Integer.valueOf(x[0]);
-        int c = Integer.valueOf(x[1]);
+        int r = pos/100;
+        int c = pos % 100;
         int sum = 0;
         
         if(r-1 >= 0)
@@ -37,11 +36,10 @@ class neighborSum {
     }
     
     public int diagonalSum(int value) {
-                String pos = positionMap.get(value);
-        String x[] = pos.split(":");
+                int pos = positionMap.get(value);
         
-        int r = Integer.valueOf(x[0]);
-        int c = Integer.valueOf(x[1]);
+        int r = pos/100;
+        int c = pos % 100;
         int sum = 0;
         
         if(r-1 >= 0 && c-1 >= 0)
