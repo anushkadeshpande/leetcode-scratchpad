@@ -13,6 +13,9 @@ public class Codec {
     public String serialize(TreeNode root) {
         // take level order traversal
         // if node is null, add a #
+        if(root == null)
+            return "#";
+        
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         
