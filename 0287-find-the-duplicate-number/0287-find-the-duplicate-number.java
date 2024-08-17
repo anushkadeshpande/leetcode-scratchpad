@@ -8,7 +8,7 @@ class Solution {
             else
                 set.add(n);
         }
-        
+         
         return -1;
     }
 }
