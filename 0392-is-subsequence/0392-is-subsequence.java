@@ -26,18 +26,12 @@ class Solution {
         int m = t.length();
         
         while(i < n && j < m) {
-            if(s.charAt(i) == t.charAt(j)) {
+            if(s.charAt(i) == t.charAt(j)) 
                 i++;
-                j++;
-            } else {
-                j++;
-            }
-                
+               
+            j++;                
         }
         
-        if(i == n)
-            return true;
-        else
-            return false;
+        return i == n? true : false;
     }
 }
