@@ -7,10 +7,11 @@ class Solution {
             
             String firstPart = "";
             for(int i=0; i<emailParts[0].length(); i++) {
-                if(emailParts[0].charAt(i) == '+')
+                char currentChar = emailParts[0].charAt(i); 
+                if(currentChar == '+')
                     break;
-                else if(emailParts[0].charAt(i) != '.')
-                    firstPart += emailParts[0].charAt(i);
+                else if(currentChar != '.')
+                    firstPart += currentChar;
             }
             
             emailAddresses.add(firstPart + "@" + emailParts[1]);
