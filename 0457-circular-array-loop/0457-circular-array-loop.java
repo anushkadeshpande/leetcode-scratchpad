@@ -20,7 +20,7 @@ class Solution {
             
             if (fast < 0) {
                     fast += n;
-                }
+            }
             
             // variable to set the type of check
             negative = nums[i] < 0 ? true : false;
@@ -29,12 +29,8 @@ class Solution {
             
             while(slow != fast) {
                 
-                // System.out.println(slow + "-" +visited.contains(slow));
-                
                 if(visited.contains(slow)) 
                    if(cycleLength > 1) {
-                       // System.out.println(slow);
-                       // System.out.println(fast);
                         return true;
                    }
                    else
@@ -44,23 +40,15 @@ class Solution {
                 if(negative) {
                     if(nums[slow] >= 0)
                         break;
-                    // if(nums[fast] >= 0)
-                    //     break;
                 } else {
                     if(nums[slow] <= 0)
                         break;
                 }
                                
                 visited.add(slow);
-                // visited.add(fast);
                 
                 cycleLength++;
-                
-                // if(nums[slow] < 0) {
-                //     slow = (slow + nums[slow] + n) % n;
-                // } else 
-                //     slow = (slow + nums[slow]) % n;
-                
+                                
                 slow = fast;
             
                 if(nums[fast] < 0)
@@ -69,7 +57,6 @@ class Solution {
                     fast = (fast + nums[fast]) % n;
                 
                 if (fast < 0) {
-                    System.out.println(fast);
                     fast += n;
                 }
                 
