@@ -7,11 +7,13 @@ class Solution {
         if(originalSize != m*n)
             return new int[0][0];
         
-        for(int i=0; i<m; i++) {
-            for(int j=0; j<n; j++) {
-                twoDArray[i][j] = original[idx++];
-            }
-                
+        // for(int i=0; i<m; i++) {
+        //     for(int j=0; j<n; j++) {
+        //         twoDArray[i][j] = original[idx++];
+        //     }
+        // }
+        for(int i=0; i<originalSize; i++) {
+            twoDArray[i/n][i%n] = original[i];
         }
         
         return twoDArray;
