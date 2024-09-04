@@ -15,7 +15,6 @@ class Solution {
         for(int i=0; i<commands.length; i++) {
             if(commands[i] == -1) {
                 // turn right
-                // turnTo = "Right";
                 if(direction == 'N') {
                     direction = 'E';
                 } else if(direction == 'E') {
@@ -24,11 +23,9 @@ class Solution {
                     direction = 'W';
                 } else
                     direction = 'N';
-                // i++;
             } 
             else if(commands[i] == -2) {
                 // turn right
-                // turnTo = "Left";
                 if(direction == 'N') {
                     direction = 'W';
                 } else if(direction == 'W') {
@@ -37,7 +34,6 @@ class Solution {
                     direction = 'E';
                 } else
                     direction = 'N';
-                // i++;
             }
             else if(commands[i] >= 1 && commands[i] <= 9) {
                 // check the direction
@@ -49,8 +45,6 @@ class Solution {
                     xPos= updateDistance(xPos, yPos, 'W', commands[i]);
                 else if(direction == 'E')
                     xPos = updateDistance(xPos, yPos, 'E', commands[i]);
-               
-                System.out.println(direction + ":" + xPos + ":" + yPos);
                 
                 maxDistance = Math.max(maxDistance, (xPos * xPos) + (yPos * yPos));
                 
@@ -62,37 +56,26 @@ class Solution {
     
     public int updateDistance(int xPos, int yPos, char direction, int units) {
         for(int i=0; i<units; i++) {
-            // if(obstacleSet.contains(xPos + ":" + yPos))
-            //     break;
             if(direction == 'N') {
                 if(obstacleSet.contains(xPos + ":" + (yPos+1))) 
                     break;
+                yPos++;
             }
             else if(direction == 'S') {
-                // System.out.println("Checking for " + xPos + ":" + (yPos-1));
                 if(obstacleSet.contains(xPos + ":" + (yPos-1))) 
                     break; 
+                yPos--;
             }
             else if(direction == 'W') {
                 if(obstacleSet.contains((xPos-1) + ":" + yPos))
                     break;
+                xPos--;
             }
             else if(direction == 'E') {
                 if(obstacleSet.contains((xPos+1) + ":" + yPos))
                     break;
-            }
-            
-            if(direction == 'N')
-                yPos++;
-            else if(direction == 'S')
-                yPos--;
-            else if(direction == 'W')
-                xPos--;
-            else
                 xPos++;
-            
-            
-            
+            }            
         }
         
         if(direction == 'N' || direction == 'S')
