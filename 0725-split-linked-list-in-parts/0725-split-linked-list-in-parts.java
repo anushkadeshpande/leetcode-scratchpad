@@ -21,8 +21,6 @@ class Solution {
         int parts = size / k;
         int remainder = size % k;
         
-        System.out.println(size);
-        
         temp = head;
         ListNode[] listParts = new ListNode[k];
         int j = 0;
