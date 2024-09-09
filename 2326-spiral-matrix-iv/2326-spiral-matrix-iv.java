@@ -36,14 +36,6 @@ class Solution {
                 i++;
             } 
             
-            // System.out.println("After STEP 1");
-            // for(int k=0; k<m; k++) {
-            //     for(int p=0; p<n; p++) {
-            //         System.out.print(matrix[k][p] + "\t");
-            //     }
-            //     System.out.println();
-            // }
-            
             top++;
             i = top;
             
@@ -55,14 +47,6 @@ class Solution {
             right--;
             i = right;
             
-            // System.out.println("After STEP 2");
-            // for(int k=0; k<m; k++) {
-            //     for(int p=0; p<n; p++) {
-            //         System.out.print(matrix[k][p] + "\t");
-            //     }
-            //     System.out.println();
-            // }
-
             while(head != null && i >= left) {
                 matrix[bottom][i] = head.val;
                 head = head.next;
@@ -71,14 +55,6 @@ class Solution {
             
             bottom--;
             i=bottom;
-            
-            // System.out.println("After STEP 3");
-            // for(int k=0; k<m; k++) {
-            //     for(int p=0; p<n; p++) {
-            //         System.out.print(matrix[k][p] + "\t");
-            //     }
-            //     System.out.println();
-            // }
             
             while(head != null && i >= top) {
                 matrix[i][left] = head.val;
