@@ -1,4 +1,5 @@
 class Solution {
+    int[][] dp;
     public boolean checkMatch(String s, String p, int sIndex, int pIndex) {
         // if char match go ahead
         // if dot, skip one char
@@ -12,6 +13,8 @@ class Solution {
         if(pIndex >= p.length())
             return false;
         
+        if(dp[sIndex][pIndex] != -1)
+            return dp[sIndex][pIndex] == 1;
         
         boolean match = false;
         // if characters match, it could be a match
@@ -26,17 +29,30 @@ class Solution {
         
         // if next char is char, we consider it or skip it
         // if we consider it, the current match should also be true
-        if(pIndex+1 < p.length() && p.charAt(pIndex+1) == '*')
-            return (match && checkMatch(s, p, sIndex+1, pIndex)) || checkMatch(s, p, sIndex, pIndex+2);
+        if(pIndex+1 < p.length() && p.charAt(pIndex+1) == '*') {
+            dp[sIndex][pIndex] = ((match && checkMatch(s, p, sIndex+1, pIndex)) || checkMatch(s, p, sIndex, pIndex+2)) == true ? 1 : 0;
+            return dp[sIndex][pIndex] == 1;
+        }
         
         // if the next char is not * and we've already matched the chars, check the next chars in s and p
-        if(match == true)
-            return checkMatch(s, p, sIndex+1, pIndex+1);
+        if(match == true) {
+            dp[sIndex][pIndex] = checkMatch(s, p, sIndex+1, pIndex+1) == true ? 1 : 0;
+            return dp[sIndex][pIndex] == 1;
+        }
         
+        dp[sIndex][pIndex] = 0;
         return false;
     }
     
     public boolean isMatch(String s, String p) {
+        int m = s.length();
+        int n = p.length();
+        
+        dp = new int[m+1][n+1];
+        for(int i=0; i<=m; i++) {
+            for(int j=0; j<=n; j++)
+                dp[i][j] = -1;
+        }
         return checkMatch(s, p, 0, 0);
     }
 }
