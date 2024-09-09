@@ -21,8 +21,8 @@ class Solution {
         int right = n-1;
         
         for(i=0; i<m; i++) {
-            matrix[i] = new int [n];
-            Arrays.fill(matrix[i], -1);
+            for(j =0; j<n; j++)
+                matrix[i][j] = -1;
         }
         i=0;
         j=0;
