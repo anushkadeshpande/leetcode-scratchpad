@@ -8,12 +8,13 @@ class Solution {
         int count = 0;
         for(String word: words) {
             int j = 0;
-            for(j =0; j<word.length(); j++) {
+            int l = word.length();
+            for(j =0; j<l; j++) {
                 if(!allowedChars.contains(word.charAt(j)))
                     break;
             }
             
-            if(j == word.length())
+            if(j == l)
                 count++;
         }
         
