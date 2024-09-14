@@ -16,28 +16,35 @@
 class Solution {
     int maxPathSum = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
-        findMaxHeight(root);
+        findMaxPathSum(root);
         
         return maxPathSum;
     }
     
-    public int findMaxHeight(TreeNode node) {
+    public int findMaxPathSum(TreeNode node) {
         if(node == null)
             return 0;
         
-        int leftSum = findMaxHeight(node.left);
-        int rightSum = findMaxHeight(node.right);
+        int leftSum = findMaxPathSum(node.left);
+        int rightSum = findMaxPathSum(node.right);
         
-        int maxSum = Math.max(leftSum, rightSum);
+        // finding the max of the sum of left and right subtrees
+        int maxSubtreeSum = Math.max(leftSum, rightSum);
         
-        if(maxSum < 0)
-            maxSum = 0;
+        // if both are negative, ignore them and set the maxSum as 0
+        if(maxSubtreeSum < 0)
+            maxSubtreeSum = 0;
         
-        int ans = Math.max(maxSum + node.val, node.val + leftSum + rightSum);
+        // finding sum of intermediate path
+        // we can choose to go via the maxSum path or consider the entire path from left to right
+        // with this we also choose whether to even consider going any path or not
+        int intermediateMaxPathSum = Math.max(maxSubtreeSum + node.val, node.val + leftSum + rightSum);
         
-        maxPathSum = Math.max(ans, maxPathSum);
+        // max path sum will be the max of the existing maxPathSum or the intermediate maxPathSum
+        maxPathSum = Math.max(maxPathSum, intermediateMaxPathSum);
         
-        return maxSum + node.val;
+        // for next iteration, consider only the max subtree
+        return maxSubtreeSum + node.val;
 
     }
 }
