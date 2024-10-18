@@ -36,8 +36,7 @@ class Solution {
                     queue.add(node.right);
             }
             
-            avg = avg / queueSize;
-            result.add(avg);
+            result.add(avg / queueSize);
             
         }
         
