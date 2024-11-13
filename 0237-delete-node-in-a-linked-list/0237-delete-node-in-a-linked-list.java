@@ -18,8 +18,7 @@ class Solution {
 //         temp.val = temp.next.val;
 //         temp.next = null;
         // temp.next = null;
-        ListNode next = node.next;
-        node.val = next.val;
+        node.val = node.next.val;
         node.next = node.next.next;
     }
 }
