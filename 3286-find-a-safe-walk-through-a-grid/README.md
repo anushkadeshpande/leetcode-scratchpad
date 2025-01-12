@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/find-a-safe-walk-through-a-grid/">3286. Find a Safe Walk Through a Grid</a></h2><h3>Medium</h3><hr><div><p>You are given an <code>m x n</code> binary matrix <code>grid</code> and an integer <code>health</code>.</p>
+<h2><a href="https://leetcode.com/problems/find-a-safe-walk-through-a-grid">3286. Find a Safe Walk Through a Grid</a></h2><h3>Medium</h3><hr><p>You are given an <code>m x n</code> binary matrix <code>grid</code> and an integer <code>health</code>.</p>
 
 <p>You start on the upper-left corner <code>(0, 0)</code> and would like to get to the lower-right corner <code>(m - 1, n - 1)</code>.</p>
 
@@ -19,7 +19,7 @@
 <p><strong>Explanation:</strong></p>
 
 <p>The final cell can be reached safely by walking along the gray cells below.</p>
-<img alt="" src="https://assets.leetcode.com/uploads/2024/08/04/3868_examples_1drawio.png" style="width: 301px; height: 121px;"></div>
+<img alt="" src="https://assets.leetcode.com/uploads/2024/08/04/3868_examples_1drawio.png" style="width: 301px; height: 121px;" /></div>
 
 <p><strong class="example">Example 2:</strong></p>
 
@@ -31,7 +31,7 @@
 <p><strong>Explanation:</strong></p>
 
 <p>A minimum of 4 health points is needed to reach the final cell safely.</p>
-<img alt="" src="https://assets.leetcode.com/uploads/2024/08/04/3868_examples_2drawio.png" style="width: 361px; height: 161px;"></div>
+<img alt="" src="https://assets.leetcode.com/uploads/2024/08/04/3868_examples_2drawio.png" style="width: 361px; height: 161px;" /></div>
 
 <p><strong class="example">Example 3:</strong></p>
 
@@ -44,7 +44,7 @@
 
 <p>The final cell can be reached safely by walking along the gray cells below.</p>
 
-<p><img alt="" src="https://assets.leetcode.com/uploads/2024/08/04/3868_examples_3drawio.png" style="width: 181px; height: 121px;"></p>
+<p><img alt="" src="https://assets.leetcode.com/uploads/2024/08/04/3868_examples_3drawio.png" style="width: 181px; height: 121px;" /></p>
 
 <p>Any path that does not go through the cell <code>(1, 1)</code> is unsafe since your health will drop to 0 when reaching the final cell.</p>
 </div>
@@ -60,4 +60,3 @@
 	<li><code>1 &lt;= health &lt;= m + n</code></li>
 	<li><code>grid[i][j]</code> is either 0 or 1.</li>
 </ul>
-</div>
