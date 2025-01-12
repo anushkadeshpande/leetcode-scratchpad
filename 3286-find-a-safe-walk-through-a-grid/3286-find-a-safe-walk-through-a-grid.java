@@ -1,43 +1,43 @@
-public class Solution {
-    private static final int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-
+class Solution {
     public boolean findSafeWalk(List<List<Integer>> grid, int health) {
-        int m = grid.size();
-        int n = grid.get(0).size();
-        int[][] visited = new int[m][n];
-        for (int[] row : visited) Arrays.fill(row, -1);  
+        // we start with 0,0
+        // need to reach to the end
+        int rows = grid.size();
+        int cols = grid.get(0).size();
 
-        return dfs(grid, 0, 0, health-grid.get(0).get(0), visited);
+        // let's store the maximum health that can be achieved at the cell instead of boolean visited
+        // so instead of visiting and then unvisiting a cell, record the health at that point, and visit the cell again only if the health is gonna increase
+        int[][] visited = new int[rows][cols];
+
+        for(int i=0; i<rows; i++) {
+            for(int j=0; j<cols; j++)
+                visited[i][j] = -1;
+        }
+
+        return traverse(grid, 0, 0, health, rows, cols, visited);
     }
-
-    private boolean dfs(List<List<Integer>> grid, int row, int col, int health, int[][] visited) {
-        int m = grid.size();
-        int n = grid.get(0).size();
-        
-        if (health < 1) {
+    
+    public boolean traverse(List<List<Integer>> grid, int i, int j, int health, int m, int n, int[][] visited) {
+        if(health <= 0 || i < 0 || i >= m || j < 0 || j >= n)
             return false;
-        }
-
-        if (row == m - 1 && col == n - 1 && health >= 1) {
+        
+        int currentVal = grid.get(i).get(j);
+        
+        if(i == m-1 && j == n-1 && health - currentVal > 0)
             return true;
-        }
 
-        visited[row][col] = health;
+        boolean ans = false;
+        
+        health = health - currentVal;
 
-        for (int[] dir : directions) {
-            int newRow = row + dir[0];
-            int newCol = col + dir[1];
+        if(visited[i][j] < health) {
+            visited[i][j] = health;
+
             
-            if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n) {
-                int newHealth = health - grid.get(newRow).get(newCol); 
-
-                if (newHealth > visited[newRow][newCol]) {
-                    if (dfs(grid, newRow, newCol, newHealth, visited)) {
-                        return true;
-                    }
-                }
-            }
+            ans = traverse(grid, i-1, j, health, m, n, visited) || traverse(grid, i+1, j, health, m, n, visited) || traverse(grid, i, j-1, health, m, n, visited) || traverse(grid, i, j+1, health, m, n, visited);
+        
+        // visited[i][j] = false;
         }
-        return false;
+        return ans;
     }
 }
