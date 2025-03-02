@@ -29,7 +29,7 @@ class Solution {
                 j++;
             } else {
                 // res[k][0] = nums2[j][0];
-                subList.add(nums1[j][0]);
+                subList.add(nums1[i][0]);
                 // res[k][1] = nums1[i][1] + nums2[j][1];
                 subList.add(nums1[i][1] + nums2[j][1]);
                 i++;
