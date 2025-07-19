@@ -11,11 +11,6 @@ class Solution {
         parentFolders.add(folder[0]);
         int idx = 0;
         for(int i=1; i<folder.length; i++) {
-            // if(!folder[i].contains(parentFolders.get(idx))) {
-            //     parentFolders.add(folder[i]);
-            //     idx++;
-            // }
-
             String prevFolder = parentFolders.get(idx);
 
             if(!folder[i].startsWith(prevFolder) 
