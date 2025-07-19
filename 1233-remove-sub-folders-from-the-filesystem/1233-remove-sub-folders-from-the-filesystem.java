@@ -1,6 +1,5 @@
 class Solution {
     public List<String> removeSubfolders(String[] folder) {
-
         // sort the array
         // check if previous is substring of current string
         // add to res if not
