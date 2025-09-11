@@ -20,7 +20,7 @@ class Solution {
         // return sb.toString();
 
 
-        // Approach-2 
+        // Approach-2 -- counting sort
 
         int[] count = new int[100];
 
@@ -36,12 +36,16 @@ class Solution {
 
         for (int i=0; i<s.length(); i++) {
             char c = s.charAt(i);
+            // if a consonant, store as it is
             if(!isVowel(c))
                 sortedString.append(c);
             else {
+
+                // find the 1st vowel available
                 while(count[sortedVowels.charAt(j) - 'A'] == 0)
                     j++;
                 
+                // append it
                 sortedString.append(sortedVowels.charAt(j));
                 count[sortedVowels.charAt(j) - 'A']--;
             }
