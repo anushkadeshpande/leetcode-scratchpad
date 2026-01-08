@@ -17,7 +17,7 @@ class Solution {
 
     public int findMaxProduct(int[] nums1, int[] nums2, int m, int n, int i, int j) {
         if(i >= m || j >= n)
-            return (int) -1e9;
+            return Integer.MIN_VALUE;
 
         if(dp[i][j] != Integer.MAX_VALUE)
             return dp[i][j];
