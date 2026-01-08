@@ -12,7 +12,7 @@ class Solution {
             for(int j=0; j<n; j++)
                 dp[i][j] = Integer.MAX_VALUE;
 
-        return findMaxProduct(nums1, nums2, nums1.length, nums2.length, 0, 0);
+        return findMaxProduct(nums1, nums2, m, n, 0, 0);
     }
 
     public int findMaxProduct(int[] nums1, int[] nums2, int m, int n, int i, int j) {
