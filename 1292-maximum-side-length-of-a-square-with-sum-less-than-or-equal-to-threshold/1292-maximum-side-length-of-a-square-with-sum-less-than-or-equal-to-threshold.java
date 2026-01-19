@@ -15,7 +15,7 @@ class Solution {
             for(int j=0; j<n; j++) {
                 // check for all offsets
                 int maxPossibleLength = Math.min(m-i, n-j);
-                for(int k=0; k<maxPossibleLength; k++) {
+                for(int k=bestSide; k<maxPossibleLength; k++) {
                     int val = findSum(i, j, i+k, j+k);
 
                     if(val <= threshold) {
