@@ -1,35 +1,30 @@
 class Solution {
     public int numIslands(char[][] grid) {
-        // traverse through the grid
-        // if grid[i][j] == 1, perform dfs and mark the cells as visited
-        // do not revisit a cell
-        int numIslands = 0;
-        
+        // dfs
+        int count = 0;
         for(int i=0; i<grid.length; i++) {
             for(int j=0; j<grid[0].length; j++) {
                 if(grid[i][j] == '1') {
-                    // dfs
-                    // root == grid[i][j]
-                    dfs(grid, i, j);
-                    numIslands++;
+                    // dig deeper
+                    recolor(grid, i, j);
+                    count++;
                 }
             }
         }
-        return numIslands;
+
+        return count;
     }
-    
-    private void dfs(char[][] grid, int i, int j) {
-        if(i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == '0' || grid[i][j] == 'v') {
-            // numIslands++;
+
+    void recolor(char[][] grid, int x, int y) {
+        if(x < 0 || y < 0 || x == grid.length || y == grid[0].length || grid[x][y] == '0' || grid[x][y] == 'V')
             return;
-        }
-        
-        // mark current cell as visited
-        grid[i][j] = 'v';
-        
-        dfs(grid, i+1, j);
-        dfs(grid, i, j+1);
-        dfs(grid, i-1, j);
-        dfs(grid, i, j-1);
+        if(grid[x][y] == '1') {
+            grid[x][y] = 'V';
+            recolor(grid, x+1, y);
+            recolor(grid, x, y+1);
+            recolor(grid, x-1, y);
+            recolor(grid, x, y-1);
+        } else return;
     }
+
 }
