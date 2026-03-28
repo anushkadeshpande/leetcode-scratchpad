@@ -16,6 +16,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0054-spiral-matrix](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0054-spiral-matrix/) | Medium |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
 | [0200-number-of-islands](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0200-number-of-islands/) | Medium |
 | [1266-minimum-time-visiting-all-points](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/1266-minimum-time-visiting-all-points/) | Easy |
 ## Math
@@ -47,4 +48,8 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0200-number-of-islands](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0200-number-of-islands/) | Medium |
+## Dynamic Programming
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
 <!---LeetCode Topics End-->
