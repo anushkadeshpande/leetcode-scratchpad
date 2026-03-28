@@ -16,6 +16,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0054-spiral-matrix](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0054-spiral-matrix/) | Medium |
+| [0200-number-of-islands](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0200-number-of-islands/) | Medium |
 | [1266-minimum-time-visiting-all-points](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/1266-minimum-time-visiting-all-points/) | Easy |
 ## Math
 | Problem Name | Difficulty |
@@ -29,8 +30,21 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0054-spiral-matrix](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0054-spiral-matrix/) | Medium |
+| [0200-number-of-islands](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0200-number-of-islands/) | Medium |
 ## Simulation
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0054-spiral-matrix](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0054-spiral-matrix/) | Medium |
+## Depth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0200-number-of-islands](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0200-number-of-islands/) | Medium |
+## Breadth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0200-number-of-islands](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0200-number-of-islands/) | Medium |
+## Union-Find
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0200-number-of-islands](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0200-number-of-islands/) | Medium |
 <!---LeetCode Topics End-->
