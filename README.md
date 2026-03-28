@@ -15,6 +15,7 @@
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0054-spiral-matrix](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0054-spiral-matrix/) | Medium |
 | [1266-minimum-time-visiting-all-points](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/1266-minimum-time-visiting-all-points/) | Easy |
 ## Math
 | Problem Name | Difficulty |
@@ -24,4 +25,12 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1266-minimum-time-visiting-all-points](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/1266-minimum-time-visiting-all-points/) | Easy |
+## Matrix
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0054-spiral-matrix](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0054-spiral-matrix/) | Medium |
+## Simulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0054-spiral-matrix](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0054-spiral-matrix/) | Medium |
 <!---LeetCode Topics End-->
