@@ -1,73 +1,55 @@
 class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
-        int m = matrix.length;
-        int n = matrix[0].length;
-        
-        List<Integer> spiralElements = new ArrayList<>();
-        
-        int count = m * n;
-        
-        int k = 0;
-        
         int top = 0;
+        int bottom = matrix.length - 1;
         int left = 0;
-        int right = n-1;
-        int bottom = m-1;
-        
-        while(count > 0) {
-        
-            // go left to right in the top row
-            for(k=left; k<=right; k++) {
-                spiralElements.add(matrix[top][k]);
-                count--;
-                if(count == 0)
-                    break;
+        int right = matrix[0].length - 1;
+
+        List<Integer> traversal = new ArrayList<>();
+        int numElements = matrix.length * matrix[0].length;
+        int count = 0;
+
+        while(count != numElements) {
+            // top left to top right
+            for(int i=left; i<= right; i++) {
+                traversal.add(matrix[top][i]);
+                count++;
             }
-            
             top++;
-            
-            if(count == 0)
+            if(count == numElements)
                 break;
-            
-            // go top to bottom in the right column
-            for(k=top; k<=bottom; k++) {
-                spiralElements.add(matrix[k][right]);
-                count--;
-                if(count == 0)
-                    break;
+
+            // top right to bottom right
+            for(int i=top; i<= bottom; i++) {
+                traversal.add(matrix[i][right]);
+                count++;
             }
-            
             right--;
-            
-            if(count == 0)
-                    break;
-            
-            // go from right to left in the bottom row
-            for(k=right; k>=left; k--) {
-                spiralElements.add(matrix[bottom][k]);
-                count --;
-                if(count == 0)
-                    break;
+            if(count == numElements)
+                break;
+
+            // bottom right to bottom left
+            for(int i=right; i >= left; i--) {
+                traversal.add(matrix[bottom][i]);
+                count++;
             }
-            
             bottom--;
             
-            if(count == 0)
+            if(count == numElements)
                 break;
-            
-            // go from bottom to top in the left column
-            for(k=bottom; k>=top; k--) {
-                spiralElements.add(matrix[k][left]);
-                count--;
-                if(count == 0)
-                    break;
+
+            // bottom left to top left
+            for(int i=bottom; i >= top; i--) {
+                traversal.add(matrix[i][left]);
+                count++;
             }
-            
             left++;
-            
-            if(count == 0)
+
+            if(count == numElements)
                 break;
+
         }
-        return spiralElements;
-    } 
+
+        return traversal;
+    }
 }
