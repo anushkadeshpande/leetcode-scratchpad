@@ -52,4 +52,20 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
+## Linked List
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0023-merge-k-sorted-lists](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0023-merge-k-sorted-lists/) | Hard |
+## Divide and Conquer
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0023-merge-k-sorted-lists](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0023-merge-k-sorted-lists/) | Hard |
+## Heap (Priority Queue)
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0023-merge-k-sorted-lists](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0023-merge-k-sorted-lists/) | Hard |
+## Merge Sort
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0023-merge-k-sorted-lists](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0023-merge-k-sorted-lists/) | Hard |
 <!---LeetCode Topics End-->
