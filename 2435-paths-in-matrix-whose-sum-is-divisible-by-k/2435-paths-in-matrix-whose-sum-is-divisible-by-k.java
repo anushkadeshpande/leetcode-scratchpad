@@ -21,7 +21,7 @@ class Solution {
         sum = (sum + grid[i][j]) % k;
 
         if(i == grid.length - 1 && j == grid[0].length - 1) {
-            if(sum % k == 0) {
+            if(sum == 0) {
                 return dp[i][j][sum] = 1;
             }
             return dp[i][j][sum] = 0;
