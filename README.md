@@ -19,6 +19,7 @@
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
 | [0200-number-of-islands](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0200-number-of-islands/) | Medium |
 | [1266-minimum-time-visiting-all-points](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/1266-minimum-time-visiting-all-points/) | Easy |
+| [2435-paths-in-matrix-whose-sum-is-divisible-by-k](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/2435-paths-in-matrix-whose-sum-is-divisible-by-k/) | Hard |
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -32,6 +33,7 @@
 | ------- | ------- |
 | [0054-spiral-matrix](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0054-spiral-matrix/) | Medium |
 | [0200-number-of-islands](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0200-number-of-islands/) | Medium |
+| [2435-paths-in-matrix-whose-sum-is-divisible-by-k](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/2435-paths-in-matrix-whose-sum-is-divisible-by-k/) | Hard |
 ## Simulation
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -52,6 +54,7 @@
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
+| [2435-paths-in-matrix-whose-sum-is-divisible-by-k](https://github.com/anushkadeshpande/leetcode-scratchpad/tree/main/2435-paths-in-matrix-whose-sum-is-divisible-by-k/) | Hard |
 ## Linked List
 | Problem Name | Difficulty |
 | ------- | ------- |
